@@ -1,5 +1,7 @@
 package com.schultzz.twoDimension;
 
+import javafx.scene.canvas.Canvas;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,10 +12,12 @@ import java.util.Random;
  */
 public class PSOLogic {
 
+    private GraphPlotter plotter;
+    private Canvas canvas;
     private double globalBest;
     private double maxDistance;
     private double[] globalBestCor;
-    private int swarmSize = 5;
+    private int swarmSize = 15;
     private int maxIteration = 80;
     private static final double X_LOW = -2;
     private static final double X_HIGH = 2;
@@ -27,6 +31,11 @@ public class PSOLogic {
     private static final double W_LOWERBOUND = 0.4;
     private List<Bee> swarm = new ArrayList<>();
 
+    public PSOLogic(Canvas canvas) {
+        plotter = new GraphPlotter();
+        this.canvas = canvas;
+        plotter.resetCanvas(canvas);
+    }
 
     public void runner() {
         initSwarm();
@@ -60,6 +69,8 @@ public class PSOLogic {
 
             bee.set_xLoc(bee.get_xLoc() + bee.get_velocity()[0]);
             bee.set_yLoc(bee.get_yLoc() + bee.get_velocity()[1]);
+
+            plotter.plotPoints(canvas, bee.get_xLoc(), bee.get_yLoc());
 
         }
 
