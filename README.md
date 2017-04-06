@@ -2,7 +2,7 @@
 
 This exercise calculates functions with the help of a swarm of "bees". We use the SPO (swarm particle optimization) global best algorithm to do our calculations. When calculating our new vectors, the movement of the bee will have a direction parallel to new velocity but at the same time have a direction towards its personal best and the global best. See picture below.
 
-![alt text]( "Logo Title Text 1")
+![alt text](https://github.com/Schultzz/AlgoSPOSPE/blob/master/Velocity.png?raw=true "SPO velocity")
 
 ### Two dimension
 
