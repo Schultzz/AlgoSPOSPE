@@ -14,30 +14,35 @@ public class PSOLogic {
 
     private GraphPlotter plotter;
     private Canvas canvas;
+
     private double globalBest;
     private double maxDistance;
     private double[] globalBestCor;
-    private int swarmSize = 15;
-    private int maxIteration = 80;
-    private static final double X_LOW = -2;
-    private static final double X_HIGH = 2;
-    private static final double Y_LOW = -2;
-    private static final double Y_HIGH = 2;
-    private static final double VEL_LOW = -1;
-    private static final double VEL_HIGH = 1;
-    private static final double P1 = 2.00;
-    private static final double P2 = 2.00;
-    private static final double W_UPPERBOUND = 0.9;
-    private static final double W_LOWERBOUND = 0.4;
+    private int swarmSize;
+    private int maxIteration;
+
+    private final double X_LOW = -2;
+    private final double X_HIGH = 2;
+    private final double Y_LOW = -2;
+    private final double Y_HIGH = 2;
+    private final double VEL_LOW = -1;
+    private final double VEL_HIGH = 1;
+    private final double P1 = 2.00;
+    private final double P2 = 2.00;
+    private final double W_UPPERBOUND = 0.9;
+    private final double W_LOWERBOUND = 0.4;
+
     private List<Bee> swarm = new ArrayList<>();
 
-    public PSOLogic(Canvas canvas) {
+    public PSOLogic(Canvas canvas, int swarmSize, int maxIteration) {
         plotter = new GraphPlotter();
         this.canvas = canvas;
-        plotter.resetCanvas(canvas);
+        this.swarmSize = swarmSize;
+        this.maxIteration = maxIteration;
+        //plotter.resetCanvas(canvas);
     }
 
-    public void runner() {
+    public void run() {
         initSwarm();
         updateFitnessValues(swarm, 0);
 
