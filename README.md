@@ -11,7 +11,14 @@ Function to be solved: z = x * exp(– x*x – y*y)
 Search area: –2 < x < 2 and –2 < y < 2
 
 #### Compared to earth:
-Magic plz
+The earth is 12742 km in diameter. The boundary for our problem is -2 to 2, which gives a diameter of 4.
+
+12742 / 4 = 3185 km
+
+The longest distance between two particles = 0,0116909307974329
+
+0,0116909307974329 * 3185 = 37,24 km
+
 
 #### Calculated maximum distance:
 
